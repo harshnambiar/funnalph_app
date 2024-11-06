@@ -38,6 +38,25 @@ async function a() {
 }
 window.a = a;
  
+
+async function d() {
+    try {
+        const data = {
+            payee: '14cLiRion2B2H1aFBbyPraNvWz1SUufiU2cgmWiqBNyAY',
+        }
+        const response = await axios.post("https://cors-anywhere.herokuapp.com/https://gm-serve3.onrender.com/api/funnalph/payee/entries", {
+            data: data,
+        });
+        console.log(response.data);
+    }
+    catch (err) {
+        console.log(err);
+    }
+    console.log("hi");
+}
+window.d = d;
+
+
 async function b() {
 try {
         const data = {
@@ -78,12 +97,25 @@ try {
 }
 window.c = c;
 
-async function d() {
-    console.log("hi");
-}
-window.d = d;
 
 async function e() {
+    var now = new Date().toUTCString();
+    try {
+        const data = {
+            aId: '14cLiRion2B2H1aFBbyPraNvbmJeks2YaaLr8KhMdacAnW09e0088392',
+            payee: '14cLiRion2B2H1aFBbyPraNvWz1SUufiU2cgmWiqBNyAY',
+            agent: '18PtRKysjGKNQJijidydDH6bmJeks2YaaLr8KhMdacAnW',
+            total: '20',
+            timestamp: now,
+        }
+        const response = await axios.post("https://cors-anywhere.herokuapp.com/https://gm-serve3.onrender.com/api/funnalph/agent/set", {
+            data: data,
+        });
+        console.log(response.data);
+    }
+    catch (err) {
+        console.log(err);
+    }
     console.log("hi");
 }
 window.e = e;
