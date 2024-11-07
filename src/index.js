@@ -119,3 +119,52 @@ async function e() {
     console.log("hi");
 }
 window.e = e;
+
+
+async function f() {
+    var flag = false;
+    var t = "";
+    try {
+        const data = {
+            payee: '14cLiRion2B2H1aFBbyPraNvWz1SUufiU2cgmWiqBNyAY',
+        }
+        const response = await axios.post("https://cors-anywhere.herokuapp.com/https://gm-serve3.onrender.com/api/funnalph/agents", {
+            data: data,
+        });
+        var i = 0;
+        while (i < response.data.agents.length){
+            if (response.data.agents[i].agent == '18PtRKysjGKNQJijidydDH6bmJeks2YaaLr8KhMdacAnW'){
+                flag = true;
+                t = response.data.agents[i].total;
+                break;
+
+            }
+            i++;
+        }
+    }
+    catch (err) {
+        console.log(err);
+    }
+    if (!flag){
+        throw "agent doesn't exist for payee";
+    }
+    else {
+        try {
+            console.log(t);
+            const data = {
+                payee: '14cLiRion2B2H1aFBbyPraNvWz1SUufiU2cgmWiqBNyAY',
+                agent: "18PtRKysjGKNQJijidydDH6bmJeks2YaaLr8KhMdacAnW",
+                amount: t,
+                added: "7",
+            }
+            const response = await axios.put("https://cors-anywhere.herokuapp.com/https://gm-serve3.onrender.com/api/funnalph/agent/update", {
+                data: data,
+            });
+        }
+        catch (err){
+            console.log(err);
+        }
+    }
+
+}
+window.f = f;
