@@ -44,7 +44,7 @@ async function d() {
         const data = {
             payee: '14cLiRion2B2H1aFBbyPraNvWz1SUufiU2cgmWiqBNyAY',
         }
-        const response = await axios.post("https://cors-anywhere.herokuapp.com/https://gm-serve3.onrender.com/api/funnalph/payee/entries", {
+        const response = await axios.post("https://gm-serve3.onrender.com/api/funnalph/payee/entries", {
             data: data,
         });
         console.log(response.data);
