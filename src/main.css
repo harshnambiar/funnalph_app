@@ -1588,6 +1588,19 @@
     font-weight: 600;
     margin-bottom: 1em;
   }
+  .homeWrapper .homeText5 {
+    color: #ff6f00;
+    font-family: "Poppins";
+    font-size:175%;
+    font-weight: 400;
+  }
+  .homeWrapper .homeText6 {
+    color: #ff6f00;
+    font-family: "Poppins";
+    font-size:220%;
+    font-weight: 300;
+    margin-bottom: 1em;
+  }
   .homeWrapper .actionContainer {
     width: 100%;
   }

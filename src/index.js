@@ -21,6 +21,26 @@ async function connectWallet() {
 }
 window.connectWallet = connectWallet;
 
+async function toAbout(){
+    window.location.href = './about.html';
+}
+window.toAbout = toAbout;
+
+async function toHome(){
+    window.location.href = './';
+}
+window.toHome = toHome;
+
+async function toFunnels(){
+    window.location.href = './funnelboard.html';
+}
+window.toFunnels = toFunnels;
+
+async function toFunnel(){
+    window.location.href = './funnel.html';
+}
+window.toFunnel = toFunnel;
+
 async function a() {
     try {
         const data = {
