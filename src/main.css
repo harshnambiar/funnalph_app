@@ -118,38 +118,11 @@
     margin-right: 0.5em;
   }
   .pageHeader .walletBtn:hover {
-    background-color: transparent;
+    background-color: red;
     border: 1px solid var(--primaryColor);
   }
-  .pageHeader .languageBtn {
-    border: 1px solid var(--primaryColor);
-    background-color: transparent;
-    color: var(--secondaryColor);
-    font-size: 0.9em;
-    font-weight: 700;
-    padding: 0.3em 1em;
-    border-radius: 0.6em;
-    transition: 200ms all ease-in-out;
-  }
-  .pageHeader .languageBtn:hover {
-    color: var(--primaryColor);
-    border-color: var(--secondaryColor);
-  }
-  .pageHeader .headerButtons .dropdown-menu {
-    background-color: #000000;
-  }
-  .pageHeader .headerButtons .dropdown-menu .dropdown-item {
-    color: var(--secondaryColor);
-    font-size: 0.9em;
-    font-weight: 600;
-  }
-  .pageHeader .headerButtons .dropdown-menu .dropdown-item:hover {
-    background-color: black;
-    color: var(--primaryColor);
-  }
-  .pageHeader .headerButtons {
-    width: 25%;
-  }
+
+
   
   /* Banner Section */
   .bannerSection {
@@ -1559,7 +1532,7 @@
     padding: 6em 3em;
   }
   .homeWrapper .homeText {
-    background-color: #ff6f00;
+    background-color: #0097A7;
     color: black;
     display: inline-block;
     width: 30%;
@@ -1569,33 +1542,33 @@
     margin-bottom: 1em;
   }
   .homeWrapper .homeText2 {
-    color: #ff6f00;
+    color: #0097A7;
     font-family: "Poppins";
     font-size:300%;
     font-weight: 400;
     margin-bottom: 1em;
   }
   .homeWrapper .homeText3 {
-    color: #ff6f00;
+    color: #0097A7;
     font-family: "Poppins";
     font-size:400%;
     font-weight: 600;
     
   }
   .homeWrapper .homeText4 {
-    color: #ff6f00;
+    color: #0097A7;
     font-family: "Poppins";
     font-weight: 600;
     margin-bottom: 1em;
   }
   .homeWrapper .homeText5 {
-    color: #ff6f00;
+    color: #0097A7;
     font-family: "Poppins";
     font-size:175%;
     font-weight: 400;
   }
   .homeWrapper .homeText6 {
-    color: #ff6f00;
+    color: #0097A7;
     font-family: "Poppins";
     font-size:220%;
     font-weight: 300;
@@ -1605,7 +1578,7 @@
     width: 100%;
   }
   .homeWrapper .homeImg {
-    margin-bottom: 4.5em;
+    margin-bottom: 1.25em;
     height: 200px;
   }
   .homeWrapper .homeInput {
@@ -1661,6 +1634,13 @@
   body.home .pageHeader.homeHeader .walletBtn {
     padding: 0.4em 1.4em;
     margin-right: 0;
+    font-weight: 800;
+    transition: 250ms all ease-in-out;
+  }
+  body.home .pageHeader.homeHeader .walletBtn: hover {
+    padding: 0.4em 1.4em;
+    margin-right: 0;
+    color: gold;
   }
   body.home .pageHeader.homeHeader .walletBtn img {
     vertical-align: middle;
@@ -1734,56 +1714,8 @@
   .nftsSection.userSection .saveBtn:hover {
     opacity: 0.7;
   }
-  .pageHeader.offersHeader .languageBtn {
-    border: none;
-    padding: 0.3em;
-  }
-  .pageHeader.offersHeader .languageBtn .uploadProgressbarParent {
-    width: 85%;
-    position: relative;
-    margin-top: 0.2em;
-  }
-  .pageHeader.offersHeader .languageBtn .uploadProgressbarParent .progress {
-    height: 0.8rem;
-    font-size: 0.6em;
-    font-weight: 700;
-    border-radius: 16px;
-    background-color: var(--secondaryColor);
-    margin-left: 2.2em;
-  }
-  .pageHeader.offersHeader .languageBtn .uploadProgressbarParent .progress-bar {
-    background: linear-gradient(135deg, #ff6fd8 0%, #3813c2 100%);
-    border-radius: 16px;
-  }
-  .pageHeader.offersHeader
-    .languageBtn
-    .uploadProgressbarParent
-    .levelNotification {
-    background: linear-gradient(135deg, #498db0 0%, #fb30bc 100%);
-    font-size: 0.7em;
-    font-weight: 900;
-    color: var(--secondaryColor);
-    display: inline-block;
-    height: 15px;
-    width: 15px;
-    line-height: 1.6;
-    text-align: center;
-    border-radius: 50%;
-    position: absolute;
-    top: 0px;
-    left: 0;
-  }
-  .pageHeader.offersHeader .socialLinks {
-    display: inline-block;
-    text-decoration: none;
-    vertical-align: middle;
-    margin-right: 0.5em;
-    transition: 200ms all ease-in-out;
-  }
-  .pageHeader.offersHeader .socialLinks:hover {
-    filter: invert(50%) sepia(88%) saturate(914%) hue-rotate(280deg)
-      brightness(103%) contrast(106%);
-  }
+
+
   .cardsSection.offersSection .offersLink {
     font-size: 1.2em;
     font-weight: 700;
