@@ -57,7 +57,7 @@ async function a() {
     console.log("hi");
 }
 window.a = a;
- 
+
 
 async function d() {
     try {

@@ -3,8 +3,8 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Funnel Board</title>
-    <link rel="icon" href="img/home.png" />
+    <title>Funnalph Dashboard</title>
+    <link rel="icon" href="img/img.svg" />
     <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
@@ -13,77 +13,215 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"
     />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/minireset.css/0.0.2/minireset.min.css"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
-      integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700;900&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;500;600;700;800;900&display=swap"
-      rel="stylesheet"
-    />
-    <script defer="defer" src="./main.js"></script>
     <link rel="stylesheet" href="./main.css" />
-  </head>
-  <body class="home" >
-  <div class="pageHeader homeHeader">
-      <a class="walletBtn" onclick="toHome();" style="cursor:pointer;">Home</a>
+    <script defer="defer" src="./main.js"></script>
 
-      
-    </div>
-    
-    <!-- Home Wrapper -->
-    <div class="homeWrapper">
-      
-     
-      <div class="homeText3">Funnalph</div> 
-      <div class="homeText">Coming Soon to Alephium Testnet</div>
-      <br/><br/><br/><br/>
-      <div style="font-size: 1.4em;">
-      
-     
-      
-      <p style="color: black;background-color:#0097A7;font-size:1.5em;">
-      Want to be in the first batch of Project Funnels on Funnalph?
-      </p>
-      <p style="color:black;background-color:#0097A7;margin-bottom:2%;">
-      Drop us a mail at <a href="mailto:thedarksunlabs@gmail.com?subject=Project Funnel Application 2024" style="color: silver;"><b>thedarksunlabs@gmail.com</b></a> <br/>
-      The more details you provide about your project, the better.
-      </p>
-      
-      </div>
+  <style>
+    body {
+      font-family: "Poppins", sans-serif;
+      background: linear-gradient(135deg, #1f1f2e, #2c2c3f);
+      color: #ffffff;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
 
-      <br/><br/>
-     <p style="color:red;font-size:1em;"> Note: Funnalph is owned by The Dark Sun Labs, not affiliated to the Alephium Network team. We do NOT have any say in the price movement of the ALPH token, and hence cannot guarantee that the value of the tokens would always be more in USDT than it was at the time of funnel usage.
-      </p>
+    .navbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: linear-gradient(to right, #0097a7, #00ccff);
+      padding: 20px 30px;
+      border-bottom: 2px solid rgba(255, 255, 255, 0.2);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 100;
+      transition: all 0.3s ease-in-out;
+    }
+
+    .navbar img {
+      height: 50px;
+      transition: transform 0.3s ease-in-out;
+    }
+
+    .navbar img:hover {
+      transform: scale(1.1);
+    }
+
+    .nav-buttons {
+      display: flex;
+      gap: 20px;
+    }
+
+    .nav-buttons button {
+      background: none;
+      color: #fff;
+      border: 2px solid #fff;
+      border-radius: 5px;
+      padding: 12px 16px;
+      cursor: pointer;
+      font-size: 1.1rem;
+      font-weight: bold;
+      text-transform: uppercase;
+      transition: background 0.3s ease, transform 0.3s ease;
+    }
+
+    .nav-buttons button:hover {
+      background: #00ccff;
+      color: #1f1f2e;
+      transform: translateY(-5px);
+    }
+
+    .homeWrapper {
+      text-align: center;
+      margin-top: 200px;
+    }
+
+    .homeText3 {
+      font-size: 3.5em;
+      font-weight: 900;
+      background: -webkit-linear-gradient(#ff0066, #00ccff);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      text-transform: uppercase;
+      text-shadow: 0 0 8px rgba(255, 255, 255, 0.2);
+      animation: glow 2s infinite alternate;
+    }
+
+    @keyframes glow {
+      0% {
+        text-shadow: 0 0 8px #ff0066, 0 0 20px #ff0066, 0 0 40px #ff0066;
+      }
+      100% {
+        text-shadow: 0 0 12px #00ccff, 0 0 30px #00ccff, 0 0 60px #00ccff;
+      }
+    }
+
+    .homeText {
+      font-size: 1.5em;
+      margin-top: 20px;
+      color: #ccc;
+    }
+
+    .cta-box {
+      margin-top: 60px;
+      font-size: 1.4em;
+      background: linear-gradient(to right, #ff0066, #00ccff);
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 15px rgba(255, 0, 102, 0.5);
+      color: #fff;
+      animation: pulse 3s infinite;
+    }
+
+    @keyframes pulse {
+      0% {
+        box-shadow: 0 0 15px rgba(255, 0, 102, 0.5);
+      }
+      50% {
+        box-shadow: 0 0 30px rgba(255, 0, 102, 0.8);
+      }
+      100% {
+        box-shadow: 0 0 15px rgba(255, 0, 102, 0.5);
+      }
+    }
+
+    a {
+      color: #00ccff;
+      font-weight: bold;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+
+    a:hover {
+      color: #ff0066;
+    }
+
+    .funnels {
+      margin-top: 60px;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .funnel-card {
+      background: #333;
+      padding: 15px;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    }
+
+    .funnel-card h3 {
+      color: #00e5ff;
+    }
+
+    .funnel-card p {
+      color: #bbb;
+    }
+
+    .funnel-card a {
+      text-decoration: none;
+      color: #0097a7;
+      font-weight: bold;
+      display: inline-block;
+      margin-top: 10px;
+    }
+
+    .funnel-card a:hover {
+      color: #00e5ff;
+    }
+
+    .footer {
+      margin-top: auto;
+      padding: 20px;
+      background: rgba(255, 255, 255, 0.1);
+      text-align: center;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+    }
+  </style>
+</head>
+<body>
+
+  <div class="navbar">
+    <a href="index.html">
+      <img src="img/logo.svg" alt="Funnalph Logo" />
+    </a>
+    <div class="nav-buttons">
+      <button onclick="location.href='./'">Home</button>
+      <button onclick="location.href='about.html'">About</button>
+      <button onclick="connectWallet();" id="connectWallet">Connect Wallet</button>
     </div>
-      
-  <br/>
-      
+  </div>
+
+
+  <div class="homeWrapper">
+    <div class="homeText3">Welcome to Funnalph</div>
+    <div class="homeText">
+      The future of blockchain-based funnels on the Alephium Network. Explore and manage your funnels with ease.
     </div>
-    
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"></script>
-  </body>
+
+
+    <div class="cta-box">
+      Ready to launch your project funnel? <br />
+      Drop us an email at
+      <a href="mailto:thedarksunlabs@gmail.com?subject=Project Funnel Application 2024">thedarksunlabs@gmail.com</a><br />
+      Share your project details and we’ll get you started.
+    </div>
+  </div>
+
+
+
+
+  <div class="footer">
+    © 2024 Funnalph | The Dark Sun Labs
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
 </html>
-
