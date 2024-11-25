@@ -177,7 +177,14 @@
     padding: 0.4em 0;
     margin-top: 0.9em;
   }
+  .intro-text {
 
+    font-size: 1.2em;
+  }
+  .feature-text {
+
+    font-size: 1.1em;
+  }
   /* Side Menu */
   .sideMenu {
     width: 85px;
