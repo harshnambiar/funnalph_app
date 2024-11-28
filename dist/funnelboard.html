@@ -83,7 +83,7 @@
     }
 
     .homeText3 {
-      font-size: 3.5em;
+      font-size: 3.0em;
       font-weight: 900;
       background: -webkit-linear-gradient(#ff0066, #00ccff);
       -webkit-background-clip: text;
@@ -185,9 +185,9 @@
     }
   </style>
 </head>
-<body>
+<body onload="loadFunnelboard();">
 
-  <div class="navbar">
+  <div class="navbar" id="nvbr">
     <a href="index.html">
       <img src="img/logo.svg" alt="Funnalph Logo" />
     </a>
@@ -200,8 +200,8 @@
 
 
   <div class="homeWrapper">
-    <div class="homeText3">Welcome to Funnalph</div>
-    <div class="homeText">
+    <div class="homeText3" id="ht3">Welcome to Funnalph</div>
+    <div class="homeText" id="ht1">
       The future of blockchain-based funnels on the Alephium Network. Explore and manage your funnels with ease.
     </div>
 

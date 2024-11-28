@@ -188,3 +188,16 @@ async function f() {
 
 }
 window.f = f;
+
+async function loadFunnelboard(){
+    console.log("hi");
+    var el = document.getElementById("nvbr");
+    var w = el.clientWidth;
+    console.log(w);
+    if (w < 600) {
+        document.getElementById("ht3").style.fontSize = "320%";
+        document.getElementById("ht1").style.width = "60%";
+    }
+
+}
+window.loadFunnelboard = loadFunnelboard
