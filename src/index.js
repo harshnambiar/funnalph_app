@@ -1,5 +1,6 @@
 import { web3, NodeProvider, ONE_ALPH, DUST_AMOUNT, ALPH } from '@alephium/web3'
 import { getDefaultAlephiumWallet } from "@alephium/get-extension-wallet"
+import { Funnel } from './artifacts/ts/Funnel'
 import axios from "axios";
 
 var wallet;
@@ -200,4 +201,30 @@ async function loadFunnelboard(){
     }
 
 }
-window.loadFunnelboard = loadFunnelboard
+window.loadFunnelboard = loadFunnelboard;
+
+async function create_entry(){
+    const nodeUrl = 'https://wallet-v20.testnet.alephium.org'
+    const nodeProvider = new NodeProvider(nodeUrl)
+    web3.setCurrentNodeProvider(nodeProvider)
+
+    const funnelAddress = 'zPiJiMa3jZVKMjBtTK7eUFUvWHH8AsXEeBQxgAtoa5yU'
+    const fun = Funnel.at(funnelAddress)
+    console.log(wallet);
+    try {
+        const res = await fun.transact.createEntry({
+        signer: wallet,
+        args: { amt: 2n, to: '1KMwDH1yqkK51jLBmWWAS5NwbLa59sEoyhanTtXRwgUU', ag: '1KMwDH1yqkK51jLBmWWAS5NwbLa59sEoyhanTtXRwgUU'},
+        attoAlphAmount: DUST_AMOUNT + (ONE_ALPH * 2n)/10n
+        //this amount is 0.10 ALPH, needed to insert into one mapping in Ralph. if there were more mappings, it 
+        //would have been a multiple of this
+      })
+        console.log("funnel entry created successfully!");
+    }
+    catch (err) {
+        console.log(err);
+        console.log("funnel entry creation task failed successfully!");
+    }
+    
+}
+window.create_entry = create_entry;

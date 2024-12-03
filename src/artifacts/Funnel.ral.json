@@ -1,0 +1,186 @@
+{
+    "version": "v3.8.4",
+    "name": "Funnel",
+    "bytecode": "060340fe41b3426b0101030b004071d3455b48eeb4170316031601460c7b16031602460d7b140a5f5f6d61705f5f305f5fa0000d2a4044cbc5190e7b1603a41704160413c4016345785d8a000016002c330f7b1603160113c32386f26fc1000013092c16002ca71603160213c3038d7ea4c6800013092c16002ca7160313c3038d7ea4c6800016002ca956170516031601160216001605170a17091708170717061603d1a2140a5f5f6d61705f5f305f5fa0000d2a4044b11606160716081609160ad20105a0000d2aa100a00113c301c6bf5263400016002c2aa101a00213c301c6bf5263400016002c2aa102051603160116021600611600a005334c04a000a1041600a1050101000b00405ad3c857a916a00113c4016345785d8a000033117b140a5f5f6d61705f5f305f5fa0004044cbc50e7ba0000c33107b5617001600a0012a17011601a0002e0d2a1702140a5f5f6d61705f5f305f5f16024044cbc50e7b0c0d0d140a5f5f6d61705f5f305f5f16024044cb170a160a01010d0d0d160a01010e0d0d160a01010f0d0d160a0101100d0d160a010117071706170517041703160517081608a001a8b417090616091608a0011600610ca1010101000b00405cd358357f4ba00213c4016345785d8a00003313067b140a5f5f6d61705f5f305f5fa0004044cbc50e7ba0031343e82a1700a00016003413077ba0021343e82ca000a0032b2d17015617020c0d0d140a5f5f6d61705f5f305f5fa0044044cb170a160a01010d0d0d160a01010e0d0d160a01010f0d0d160a0101100d0d160a0101170717061705170417031605170816081601a81600a103b4170907160916081601160261a00216012ba1020ca1040ca105",
+    "codeHash": "a1e75987dc38b522c5a0a1e854116ea837d59dd86ad58705e8bbbae5add9bce8",
+    "fieldsSig": {
+        "names": [
+            "count",
+            "raffle",
+            "reward",
+            "lastrun",
+            "leadingentry",
+            "leadingamount"
+        ],
+        "types": [
+            "U256",
+            "U256",
+            "U256",
+            "U256",
+            "U256",
+            "U256"
+        ],
+        "isMutable": [
+            true,
+            true,
+            true,
+            true,
+            true,
+            true
+        ]
+    },
+    "eventsSig": [
+        {
+            "name": "NewEntry",
+            "fieldNames": [
+                "by",
+                "to",
+                "agent",
+                "value"
+            ],
+            "fieldTypes": [
+                "Address",
+                "Address",
+                "Address",
+                "U256"
+            ]
+        },
+        {
+            "name": "NewRaffle",
+            "fieldNames": [
+                "by",
+                "winner",
+                "amount",
+                "timestamp"
+            ],
+            "fieldTypes": [
+                "Address",
+                "Address",
+                "U256",
+                "U256"
+            ]
+        },
+        {
+            "name": "NewReward",
+            "fieldNames": [
+                "by",
+                "winner",
+                "amount",
+                "timestamp"
+            ],
+            "fieldTypes": [
+                "Address",
+                "Address",
+                "U256",
+                "U256"
+            ]
+        }
+    ],
+    "functions": [
+        {
+            "name": "createEntry",
+            "paramNames": [
+                "amt",
+                "to",
+                "ag"
+            ],
+            "paramTypes": [
+                "U256",
+                "Address",
+                "Address"
+            ],
+            "paramIsMutable": [
+                false,
+                false,
+                false
+            ],
+            "returnTypes": []
+        },
+        {
+            "name": "raffleDist",
+            "paramNames": [],
+            "paramTypes": [],
+            "paramIsMutable": [],
+            "returnTypes": []
+        },
+        {
+            "name": "rewardDist",
+            "paramNames": [],
+            "paramTypes": [],
+            "paramIsMutable": [],
+            "returnTypes": []
+        }
+    ],
+    "constants": [],
+    "enums": [
+        {
+            "name": "ErrorCodes",
+            "fields": [
+                {
+                    "name": "SelfPay",
+                    "value": {
+                        "type": "U256",
+                        "value": "0"
+                    }
+                },
+                {
+                    "name": "AgentPay",
+                    "value": {
+                        "type": "U256",
+                        "value": "1"
+                    }
+                },
+                {
+                    "name": "DataMalfunction",
+                    "value": {
+                        "type": "U256",
+                        "value": "2"
+                    }
+                },
+                {
+                    "name": "LackOfBal",
+                    "value": {
+                        "type": "U256",
+                        "value": "3"
+                    }
+                },
+                {
+                    "name": "NoneEligible",
+                    "value": {
+                        "type": "U256",
+                        "value": "4"
+                    }
+                },
+                {
+                    "name": "RaffleLow",
+                    "value": {
+                        "type": "U256",
+                        "value": "5"
+                    }
+                },
+                {
+                    "name": "RewardLow",
+                    "value": {
+                        "type": "U256",
+                        "value": "6"
+                    }
+                },
+                {
+                    "name": "OngoingCycle",
+                    "value": {
+                        "type": "U256",
+                        "value": "7"
+                    }
+                }
+            ]
+        }
+    ],
+    "mapsSig": {
+        "names": [
+            "entries"
+        ],
+        "types": [
+            "Map[U256,Entries]"
+        ]
+    }
+}
