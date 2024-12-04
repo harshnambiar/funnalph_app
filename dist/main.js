@@ -4523,7 +4523,8 @@ async function create_entry(){
     try {
         const res = await fun.transact.createEntry({
         signer: wallet,
-        attoAlphAmount: alephium_web3_min.DUST_AMOUNT * 100n
+        args: { amt: 2n, to: '1KMwDH1yqkK51jLBmWWAS5NwbLa59sEoyhanTtXRwgUU', ag: '1KMwDH1yqkK51jLBmWWAS5NwbLa59sEoyhanTtXRwgUU'},
+        attoAlphAmount: alephium_web3_min.DUST_AMOUNT + alephium_web3_min.MAP_ENTRY_DEPOSIT + (alephium_web3_min.ONE_ALPH * 2n)/10n
         //this amount is 0.10 ALPH, needed to insert into one mapping in Ralph. if there were more mappings, it 
         //would have been a multiple of this
       })

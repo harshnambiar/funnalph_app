@@ -1,4 +1,4 @@
-import { web3, NodeProvider, ONE_ALPH, DUST_AMOUNT, ALPH } from '@alephium/web3'
+import { web3, NodeProvider, ONE_ALPH, DUST_AMOUNT, ALPH, MAP_ENTRY_DEPOSIT } from '@alephium/web3'
 import { getDefaultAlephiumWallet } from "@alephium/get-extension-wallet"
 import { Funnel } from './artifacts/ts/Funnel'
 import axios from "axios";
@@ -215,7 +215,7 @@ async function create_entry(){
         const res = await fun.transact.createEntry({
         signer: wallet,
         args: { amt: 2n, to: '1KMwDH1yqkK51jLBmWWAS5NwbLa59sEoyhanTtXRwgUU', ag: '1KMwDH1yqkK51jLBmWWAS5NwbLa59sEoyhanTtXRwgUU'},
-        attoAlphAmount: DUST_AMOUNT + (ONE_ALPH * 2n)/10n
+        attoAlphAmount: DUST_AMOUNT + MAP_ENTRY_DEPOSIT + (ONE_ALPH * 2n)/10n
         //this amount is 0.10 ALPH, needed to insert into one mapping in Ralph. if there were more mappings, it 
         //would have been a multiple of this
       })
